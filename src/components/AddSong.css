@@ -1,0 +1,31 @@
+
+#addSong-form{
+    width: 100%;
+    margin: 1em;
+    padding: 1em;
+    /* display: none; */
+}
+#addSong-form input{
+    display: block;
+    width: 80%;
+    padding: 1em;
+    margin: 1em;
+}
+
+
+
+.add-button>button{
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    width: 4em;
+    height: 4em;
+    border: none;
+    border-radius: 90px;
+    outline: none;
+    background-color: rgb(180, 92, 41);
+}
+.add-button>button:hover{
+    background-color: rgb(92, 61, 43);
+    cursor: pointer;
+}

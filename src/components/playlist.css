@@ -1,0 +1,94 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.playlist-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-bar{
+    width: 100%;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 1px 1px 3px black;
+}
+.search-bar button{
+    width: 10%;
+    border: none;
+    background: transparent;
+}
+.search-bar input{
+    width: 80%;
+    border: none;
+}
+.song-main-container{
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 3px black;
+}
+.songs-container{
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 0.1em solid rgb(187, 186, 186);
+}
+.song-detail{
+    width: 30%;
+}
+.like{
+    margin: 0 1em;
+    background: transparent;
+    border: none;
+    outline: none;
+    
+}
+.like:hover{
+    cursor: pointer;
+}
+.like-count{
+    margin: 0.5em;
+}
+.song-details p{
+    display: inline;
+    margin: auto;
+}
+.song-title{
+    color: blue;
+    font-weight: 400;
+    font-size: 1em;
+}
+.song-player{
+    width: 50%;
+}
+.audio{
+    width: 100%;
+}
+
+.options{
+    width: 10%;
+    margin: auto;
+}
+.dropdownBtn{
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.dropdownBtn:hover{
+    cursor: pointer;
+}
+.delete-dropdown{
+    /* display: none; */
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
