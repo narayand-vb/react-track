@@ -1,25 +1,25 @@
 import React from "react";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { red } from "@material-ui/core/colors";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const Songs = (props) => {
-
-    let likeStyle;
-    
-        // console.log(props.liked);
-        if(props.liked)
-        {
-            likeStyle = {
-                color : 'red'
-            }
-        }
-
-    
+  let likeStyle;
+  if (props.liked) {
+    likeStyle = {
+      color: "red",
+    };
+  }
   return (
     <>
       <div className="songs-container" key={props.id}>
-        <button className="like" style={likeStyle} onClick={()=>{props.onSelect(props.id)}}>
+        <button
+          className="like"
+          style={likeStyle}
+          onClick={() => {
+            props.onSelect(props.index);
+          }}
+        >
           <span className="like-count">{props.like}</span>
           <ThumbUpIcon />
         </button>
@@ -31,11 +31,27 @@ const Songs = (props) => {
           <audio controls src={props.media} className="audio"></audio>
         </div>
         <div className="options">
-          <button className="dropdownBtn" onClick={()=>{props.onDrop(props.id)}}>
+          <button
+            className="dropdownBtn"
+            onClick={() => {
+              props.onDrop(props.index);
+            }}
+          >
             <ArrowDropDownIcon />
           </button>
-          <div className="delete-dropdown" id="delete-dropdown">
-            <button className="delete">Delete</button>
+          <div
+            className="delete-dropdown"
+            id="delete-dropdown"
+            style={{ display: "none" }}
+          >
+            <button
+              className="delete"
+              onClick={() => {
+                props.onDelete(props.index);
+              }}
+            >
+              <DeleteIcon />
+            </button>
           </div>
         </div>
       </div>

@@ -26,8 +26,8 @@ const Header = ()=>{
                     </div>
                 </div>
                 <div className="right">
-                    <a href="#" className="signout">signout</a>
-                    <ExitToAppIcon />
+                    <a href="#" className="signout">signout  <ExitToAppIcon /></a>
+                   
                 </div>
             </nav>
         </>

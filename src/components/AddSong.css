@@ -1,31 +1,61 @@
-
-#addSong-form{
-    width: 100%;
-    margin: 1em;
-    padding: 1em;
-    /* display: none; */
+.blur-backgroup {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(7, 7, 7);
+  opacity: 1;
+  position: absolute;
+  top: 0%;
 }
-#addSong-form input{
-    display: block;
-    width: 80%;
-    padding: 1em;
-    margin: 1em;
+.addSong-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: rgb(219, 253, 253);
+  height: 25em;
+  width: 50%;
+  margin: 5em auto;
+  box-shadow: 0px 50px 140px rgb(248, 247, 247);
+  animation: animation1 0.3s ease-in 0s 1 backwards;
+}
+@keyframes animation1{
+  from {width: 200px; height: 200px;}
+  to{width: 500px; height:400px;}
 }
 
-
-
-.add-button>button{
-    position: fixed;
-    bottom: 3em;
-    right: 3em;
-    width: 4em;
-    height: 4em;
-    border: none;
-    border-radius: 90px;
-    outline: none;
-    background-color: rgb(180, 92, 41);
+#addSong-form input {
+  display: block;
+  width: 80%;
+  padding: 1em;
+  margin: 1em;
 }
-.add-button>button:hover{
-    background-color: rgb(92, 61, 43);
+#addSong-form input[type='submit']{
+    width: 40%;
+    color: black;
+    border: 0.1em solid black;
+    background: transparent;
+    border-radius: 3em;
+}
+#addSong-form input[type='submit']:hover{
     cursor: pointer;
+    color: white;
+    border: 0.1em solid white;
+    background-color: black;
+}
+.add-button > button {
+  position: fixed;
+  bottom: 3em;
+  right: 3em;
+  width: 4em;
+  height: 4em;
+  border: none;
+  border-radius: 90px;
+  outline: none;
+  background-color: rgb(180, 92, 41);
+}
+.add-button > button:hover {
+  background-color: rgb(92, 61, 43);
+  cursor: pointer;
 }
