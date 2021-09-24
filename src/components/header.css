@@ -1,0 +1,35 @@
+.navbar{
+    width: 100%;
+    padding: 0.6em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(35, 35, 99);
+    font-size: 1.4em;
+    box-shadow: 1px 1px 3px black;
+  }
+  nav>*{
+    display: flex;
+    margin: 0 1em;
+  }
+  nav>*>*{
+    margin: 0.1em;
+  }
+  .left{
+    /* margin: 0 1em; */
+    color: rgb(180, 92, 41);
+    
+  }
+  .middle{
+    color: white;
+  }
+  .right{
+    margin-right: 1em;
+  }
+  .right a{
+    text-decoration: none;
+    color: rgb(180, 92, 41);
+  
+  }
+  
+  

@@ -21,7 +21,7 @@ const Songs = (props) => {
           }}
         >
           <span className="like-count">{props.like}</span>
-          <ThumbUpIcon />
+          <span className="like-icon"><ThumbUpIcon /></span>
         </button>
         <div className="song-detail">
           <p className="song-title">{props.title}</p>

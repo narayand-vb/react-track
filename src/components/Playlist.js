@@ -9,32 +9,36 @@ import SearchIcon from "@material-ui/icons/Search";
 const Playlist = () => {
   const [state, setstate] = useState(Data);
   const [oldData, newData] = useState("");
-  // const [searchTerms, setSearchTerms] = useState("");
-  // const [searchResults, setsearchResults] = useState([]);
+  const [oldRecord, setRecord] = useState({
+    title: "",
+    subtitle: "",
+    media: "",
+  });
 
-  const changeInput = (event) => {
-    newData(event.target.value);
-    // console.log(oldData);
+  const handleInput = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setRecord({ ...oldRecord, [name]: value });
   };
 
-  
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newRecord = {
+      id: state.length + 1,
+      like: 0,
+      liked: false,
+      ...oldRecord,
+    };
+    setstate([...state, newRecord]);
+    const addSong = document.getElementById("addSong-form");
+    addSong.style.display = "none";
+    setRecord({ title: "", subtitle: "", media: "" });
+  };
   const searchHandler = (event) => {
     newData(event.target.value);
-    console.log(oldData);
-    if (oldData !== "") {
-       const searchedData = state.filter((Obj) => {
-        return Object.values(Obj)[2]
-          .toLowerCase()
-          .includes(oldData.toLowerCase());
-      });
-      setstate(searchedData);
-    } else {
-      setstate(Data);
-    }
   };
 
-  //LIKES Increment / Decreament
+  //    LIKES Increment / Decreament    //
   const likeChange = (e) => {
     let likeCount, liked;
     if (!state[e].liked) {
@@ -59,7 +63,7 @@ const Playlist = () => {
     });
   };
 
-  // DROPDOWN of delete song
+  //    DROPDOWN of delete song      //
   const deleteDropdown = (id) => {
     const del_container = document.getElementsByClassName("delete-dropdown");
     if (del_container[id].style.display === "none") {
@@ -70,7 +74,7 @@ const Playlist = () => {
     }
   };
 
-  // DELETE SONG
+  //    DELETE SONG      //
   const deleteItem = (i) => {
     setstate((oldData) => {
       return oldData.filter((arrElem, index) => {
@@ -84,11 +88,12 @@ const Playlist = () => {
       <div className="playlist-container">
         <div className="search-bar">
           <button className="cancel-search">
-            <CloseIcon />
+            <CloseIcon className="cancel-search" />
           </button>
           <input
             type="search"
             placeholder="Enter text to search"
+            value={oldData}
             onChange={searchHandler}
           />
           <button className="search-button">
@@ -96,8 +101,16 @@ const Playlist = () => {
           </button>
         </div>
         <div className="song-main-container">
-          {
-            state.map((data, index) => {
+          {state
+            .filter((val) => {
+              if (oldData === "") return val;
+              else if (
+                val.title.toLowerCase().includes(oldData.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((data, index) => {
               return (
                 <Songs
                   key={index}
@@ -113,13 +126,44 @@ const Playlist = () => {
                   onDelete={deleteItem}
                 />
               );
-            })
-          }
+            })}
         </div>
 
-        {/* <div className="addSong"> */}
+        <div
+          className="blur-backgroup"
+          id="addSong-form"
+          style={{ display: "none" }}
+        >
+          <form action="" className="addSong-form">
+            <h1>Add Song</h1>
+            <input
+              type="text"
+              placeholder="Enter Title"
+              name="title"
+              value={oldRecord.title}
+              autoComplete="off"
+              onChange={handleInput}
+            />
+            <input
+              type="text"
+              placeholder="Enter Subtitle"
+              name="subtitle"
+              value={oldRecord.subtitle}
+              autoComplete="off"
+              onChange={handleInput}
+            />
+            <input
+              type="text"
+              placeholder="Media"
+              name="media"
+              value={oldRecord.media}
+              autoComplete="off"
+              onChange={handleInput}
+            />
+            <input type="submit" value="Add" onClick={handleSubmit} />
+          </form>
+        </div>
         <AddSong />
-        {/* </div> */}
       </div>
     </>
   );

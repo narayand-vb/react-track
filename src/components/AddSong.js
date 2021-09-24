@@ -3,33 +3,27 @@ import AddIcon from "@material-ui/icons/Add";
 import "./AddSong.css";
 
 
-const AddSong = ()=>{
+const AddSong = (props)=>{
 
     const showAddsongForm = ()=>{
-        const addbtn = document.querySelector(".add-button")
+        const addbtn = document.querySelector(".addBtn")
         const addSong = document.getElementById("addSong-form");
         if(addSong.style.display === "none")
         {
             addSong.style.display = "block";   
+            addbtn.style.transform = 'rotate(45deg)'
         }
-        else
+        else{
         addSong.style.display = "none";
+        addbtn.style.transform = 'rotate(0deg)'
+        }
     }    
     return(
         <>
-            <div className="blur-backgroup" id="addSong-form" style={{display:'none'}}>
-            <form action="" className="addSong-form" >
-                <h1>Add Song</h1>
-                <input type="text" placeholder="Enter Title"/>
-                <input type="text" placeholder="Enter Subtitle"/>
-                <input type="text" placeholder="Media"/>
-                <input type="submit" value="Add" onClick={()=>{               
-                }}/>
-            </form>
-            </div>
+
 
             <div className="add-button">
-          <button onClick={showAddsongForm} >
+          <button className = "addBtn" onClick={showAddsongForm} >
             <AddIcon className="buttonAdd"/>
           </button>
         </div>
