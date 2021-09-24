@@ -23,9 +23,9 @@ const AddSong = (props)=>{
 
 
             <div className="add-button">
-          <button className = "addBtn" onClick={showAddsongForm} >
+          <button className="addBtn" onClick={showAddsongForm} >
             <AddIcon className="buttonAdd"/>
-          </button>
+            </button>
         </div>
         </>
     )

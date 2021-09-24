@@ -1,8 +1,8 @@
 .blur-backgroup {
   height: 100vh;
   width: 100%;
+  min-width: 300px;
   background-color: rgb(7, 7, 7);
-  opacity: 1;
   position: absolute;
   top: 0%;
 }
@@ -23,6 +23,9 @@
 @keyframes animation1{
   from {width: 200px; height: 200px;}
   to{width: 500px; height:400px;}
+}
+.addSong-form>h1{
+  font-size: 2em;
 }
 
 #addSong-form input {
@@ -60,9 +63,5 @@
 .add-button > button:hover {
   background-color: rgb(92, 61, 43);
   cursor: pointer;
-  /* transform: rotate(45deg); */
 }
-.buttonAdd{
-  width: 2em;
-  height: 2em;
-}
+

@@ -4,7 +4,7 @@ const Data = [
         like : 3,
         title : "Com Truise - Flightwave",
         subtitle : "Read",
-        media : '',
+        media : 'http://streaming.tdiradio.com:8000/house.mp3',
         liked : true,
     },
     {

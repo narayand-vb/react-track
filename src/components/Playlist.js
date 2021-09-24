@@ -38,6 +38,10 @@ const Playlist = () => {
     newData(event.target.value);
   };
 
+  const clearSearch = ()=>{
+    newData("");
+  }
+
   //    LIKES Increment / Decreament    //
   const likeChange = (e) => {
     let likeCount, liked;
@@ -87,7 +91,7 @@ const Playlist = () => {
     <>
       <div className="playlist-container">
         <div className="search-bar">
-          <button className="cancel-search">
+          <button className="cancel-search" onClick={clearSearch}>
             <CloseIcon className="cancel-search" />
           </button>
           <input
