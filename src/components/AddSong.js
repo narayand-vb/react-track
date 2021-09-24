@@ -4,7 +4,7 @@ import "./AddSong.css";
 
 
 const AddSong = (props)=>{
-
+    //  function to show and hide the add song box
     const showAddsongForm = ()=>{
         const addbtn = document.querySelector(".addBtn")
         const addSong = document.getElementById("addSong-form");
@@ -21,7 +21,7 @@ const AddSong = (props)=>{
     return(
         <>
 
-
+            {/* Fixed button to show and hide the add song box */}
             <div className="add-button">
           <button className="addBtn" onClick={showAddsongForm} >
             <AddIcon className="buttonAdd"/>

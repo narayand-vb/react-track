@@ -7,6 +7,7 @@ import RadioIcon from "@material-ui/icons/Radio";
 const Header = () => {
   return (
     <>
+    {/*    Code for Navbar     */}
       <nav className="navbar">
         <div className="left">
           <div className="radio-img">

@@ -12,6 +12,7 @@ const Songs = (props) => {
   }
   return (
     <>
+    {/* Container contains songs with detail , like and delete button */}
       <div className="songs-container" key={props.id}>
         <button
           className="like"

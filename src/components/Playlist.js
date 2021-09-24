@@ -7,6 +7,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import SearchIcon from "@material-ui/icons/Search";
 
 const Playlist = () => {
+  // All the HOOKS used in this assignment
   const [state, setstate] = useState(Data);
   const [oldData, newData] = useState("");
   const [oldRecord, setRecord] = useState({
@@ -15,12 +16,14 @@ const Playlist = () => {
     media: "",
   });
 
+  // function to onChange in add song input
   const handleInput = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setRecord({ ...oldRecord, [name]: value });
   };
 
+  // function to add the song 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newRecord = {
@@ -34,10 +37,13 @@ const Playlist = () => {
     addSong.style.display = "none";
     setRecord({ title: "", subtitle: "", media: "" });
   };
+
+  // onChange event of serch input
   const searchHandler = (event) => {
     newData(event.target.value);
   };
 
+  // Clear button of search
   const clearSearch = ()=>{
     newData("");
   }
@@ -132,7 +138,7 @@ const Playlist = () => {
               );
             })}
         </div>
-
+            {/*     Add Song container    */}
         <div
           className="blur-backgroup"
           id="addSong-form"
